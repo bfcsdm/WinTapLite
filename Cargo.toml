@@ -1,0 +1,39 @@
+[package]
+name = "clicker-tool"
+version = "1.0.0"
+edition = "2021"
+description = "Windows 轻量化自定义连点器"
+authors = ["自定义连点器"]
+license = "MIT"
+
+[dependencies]
+# UI: egui + glow backend
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow"] }
+egui = "0.31"
+
+# Win32 API
+windows = { version = "0.60", features = [
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Input",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_Foundation",
+    "Win32_System_Threading",
+] }
+
+# JSON
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# File dialog
+rfd = "0.15"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[profile.dev]
+opt-level = 1

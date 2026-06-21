@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo --version)",
+      "Bash(rustup show *)",
+      "Bash(cargo init *)",
+      "Bash(cargo check *)",
+      "Bash(cargo build *)",
+      "Bash(dir \"D:\\\\自定义连点器工具\\\\target\\\\release\\\\clicker-tool.exe\")",
+      "Bash(start \"\" \"D:\\\\自定义连点器工具\\\\target\\\\release\\\\clicker-tool.exe\")",
+      "Bash(tasklist /FI \"IMAGENAME eq clicker-tool.exe\")",
+      "Bash(powershell -Command \"Get-Process -Name 'clicker-tool' -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, WorkingSet64\")",
+      "Bash(powershell -Command \"Stop-Process -Name clicker-tool -Force\")",
+      "Bash(powershell -Command \"Stop-Process -Name clicker-tool -Force -ErrorAction SilentlyContinue\")"
+    ]
+  }
+}
